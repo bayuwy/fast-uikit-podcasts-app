@@ -14,6 +14,8 @@
 		3A180E5F294CC40B001FFADC /* PodcastsApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A180E5D294CC40B001FFADC /* PodcastsApp.xcdatamodeld */; };
 		3A180E61294CC40C001FFADC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A180E60294CC40C001FFADC /* Assets.xcassets */; };
 		3A180E64294CC40C001FFADC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A180E62294CC40C001FFADC /* LaunchScreen.storyboard */; };
+		3A180E6E294CC438001FFADC /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A180E6C294CC438001FFADC /* Auth.storyboard */; };
+		3A180E6F294CC438001FFADC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A180E6D294CC438001FFADC /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		3A180E60294CC40C001FFADC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A180E63294CC40C001FFADC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A180E65294CC40C001FFADC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A180E6C294CC438001FFADC /* Auth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
+		3A180E6D294CC438001FFADC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +62,42 @@
 		3A180E53294CC40B001FFADC /* PodcastsApp */ = {
 			isa = PBXGroup;
 			children = (
+				3A180E70294CC43B001FFADC /* Modules */,
 				3A180E54294CC40B001FFADC /* AppDelegate.swift */,
 				3A180E56294CC40B001FFADC /* SceneDelegate.swift */,
-				3A180E58294CC40B001FFADC /* ViewController.swift */,
-				3A180E5A294CC40B001FFADC /* Main.storyboard */,
 				3A180E60294CC40C001FFADC /* Assets.xcassets */,
 				3A180E62294CC40C001FFADC /* LaunchScreen.storyboard */,
 				3A180E65294CC40C001FFADC /* Info.plist */,
 				3A180E5D294CC40B001FFADC /* PodcastsApp.xcdatamodeld */,
 			);
 			path = PodcastsApp;
+			sourceTree = "<group>";
+		};
+		3A180E6B294CC438001FFADC /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				3A180E6C294CC438001FFADC /* Auth.storyboard */,
+				3A180E6D294CC438001FFADC /* LoginViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		3A180E70294CC43B001FFADC /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				3A180E71294CC443001FFADC /* Main */,
+				3A180E6B294CC438001FFADC /* Auth */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		3A180E71294CC443001FFADC /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				3A180E5A294CC40B001FFADC /* Main.storyboard */,
+				3A180E58294CC40B001FFADC /* ViewController.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +158,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A180E6E294CC438001FFADC /* Auth.storyboard in Resources */,
 				3A180E64294CC40C001FFADC /* LaunchScreen.storyboard in Resources */,
 				3A180E61294CC40C001FFADC /* Assets.xcassets in Resources */,
 				3A180E5C294CC40B001FFADC /* Main.storyboard in Resources */,
@@ -144,6 +175,7 @@
 				3A180E59294CC40B001FFADC /* ViewController.swift in Sources */,
 				3A180E55294CC40B001FFADC /* AppDelegate.swift in Sources */,
 				3A180E5F294CC40B001FFADC /* PodcastsApp.xcdatamodeld in Sources */,
+				3A180E6F294CC438001FFADC /* LoginViewController.swift in Sources */,
 				3A180E57294CC40B001FFADC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
