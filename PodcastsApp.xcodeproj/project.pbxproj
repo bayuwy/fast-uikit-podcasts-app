@@ -16,6 +16,9 @@
 		3A180E64294CC40C001FFADC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A180E62294CC40C001FFADC /* LaunchScreen.storyboard */; };
 		3A180E6E294CC438001FFADC /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A180E6C294CC438001FFADC /* Auth.storyboard */; };
 		3A180E6F294CC438001FFADC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A180E6D294CC438001FFADC /* LoginViewController.swift */; };
+		3AB09FAD2951EEE000161F9B /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB09FAC2951EEE000161F9B /* UIColorExtensions.swift */; };
+		3AB09FAF2951F40B00161F9B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB09FAE2951F40B00161F9B /* RegisterViewController.swift */; };
+		3AB09FB1295202BD00161F9B /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB09FB0295202BD00161F9B /* UIViewControllerExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		3A180E65294CC40C001FFADC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A180E6C294CC438001FFADC /* Auth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		3A180E6D294CC438001FFADC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3AB09FAC2951EEE000161F9B /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		3AB09FAE2951F40B00161F9B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		3AB09FB0295202BD00161F9B /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,7 @@
 		3A180E53294CC40B001FFADC /* PodcastsApp */ = {
 			isa = PBXGroup;
 			children = (
+				3AB09FAB2951EEB600161F9B /* Extensions */,
 				3A180E70294CC43B001FFADC /* Modules */,
 				3A180E54294CC40B001FFADC /* AppDelegate.swift */,
 				3A180E56294CC40B001FFADC /* SceneDelegate.swift */,
@@ -78,6 +85,7 @@
 			children = (
 				3A180E6C294CC438001FFADC /* Auth.storyboard */,
 				3A180E6D294CC438001FFADC /* LoginViewController.swift */,
+				3AB09FAE2951F40B00161F9B /* RegisterViewController.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -98,6 +106,15 @@
 				3A180E58294CC40B001FFADC /* ViewController.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		3AB09FAB2951EEB600161F9B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3AB09FAC2951EEE000161F9B /* UIColorExtensions.swift */,
+				3AB09FB0295202BD00161F9B /* UIViewControllerExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,9 +189,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AB09FB1295202BD00161F9B /* UIViewControllerExtensions.swift in Sources */,
 				3A180E59294CC40B001FFADC /* ViewController.swift in Sources */,
 				3A180E55294CC40B001FFADC /* AppDelegate.swift in Sources */,
+				3AB09FAF2951F40B00161F9B /* RegisterViewController.swift in Sources */,
 				3A180E5F294CC40B001FFADC /* PodcastsApp.xcdatamodeld in Sources */,
+				3AB09FAD2951EEE000161F9B /* UIColorExtensions.swift in Sources */,
 				3A180E6F294CC438001FFADC /* LoginViewController.swift in Sources */,
 				3A180E57294CC40B001FFADC /* SceneDelegate.swift in Sources */,
 			);
