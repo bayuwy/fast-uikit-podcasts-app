@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		3A180E55294CC40B001FFADC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A180E54294CC40B001FFADC /* AppDelegate.swift */; };
 		3A180E57294CC40B001FFADC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A180E56294CC40B001FFADC /* SceneDelegate.swift */; };
-		3A180E59294CC40B001FFADC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A180E58294CC40B001FFADC /* ViewController.swift */; };
+		3A180E59294CC40B001FFADC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A180E58294CC40B001FFADC /* MainViewController.swift */; };
 		3A180E5C294CC40B001FFADC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A180E5A294CC40B001FFADC /* Main.storyboard */; };
 		3A180E5F294CC40B001FFADC /* PodcastsApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A180E5D294CC40B001FFADC /* PodcastsApp.xcdatamodeld */; };
 		3A180E61294CC40C001FFADC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A180E60294CC40C001FFADC /* Assets.xcassets */; };
@@ -19,13 +19,16 @@
 		3AB09FAD2951EEE000161F9B /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB09FAC2951EEE000161F9B /* UIColorExtensions.swift */; };
 		3AB09FAF2951F40B00161F9B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB09FAE2951F40B00161F9B /* RegisterViewController.swift */; };
 		3AB09FB1295202BD00161F9B /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB09FB0295202BD00161F9B /* UIViewControllerExtensions.swift */; };
+		3ACE41512955DE5C00A2B11A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACE41502955DE5C00A2B11A /* HomeViewController.swift */; };
+		3ACE41542955E00E00A2B11A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ACE41532955E00E00A2B11A /* Home.storyboard */; };
+		3ACE41562955EF9700A2B11A /* HomeRecentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACE41552955EF9700A2B11A /* HomeRecentViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3A180E51294CC40B001FFADC /* PodcastsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodcastsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A180E54294CC40B001FFADC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A180E56294CC40B001FFADC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3A180E58294CC40B001FFADC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3A180E58294CC40B001FFADC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3A180E5B294CC40B001FFADC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3A180E5E294CC40B001FFADC /* PodcastsApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PodcastsApp.xcdatamodel; sourceTree = "<group>"; };
 		3A180E60294CC40C001FFADC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -36,6 +39,9 @@
 		3AB09FAC2951EEE000161F9B /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		3AB09FAE2951F40B00161F9B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		3AB09FB0295202BD00161F9B /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		3ACE41502955DE5C00A2B11A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3ACE41532955E00E00A2B11A /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		3ACE41552955EF9700A2B11A /* HomeRecentViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecentViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +99,7 @@
 		3A180E70294CC43B001FFADC /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				3ACE41522955DFFD00A2B11A /* Home */,
 				3A180E71294CC443001FFADC /* Main */,
 				3A180E6B294CC438001FFADC /* Auth */,
 			);
@@ -103,7 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				3A180E5A294CC40B001FFADC /* Main.storyboard */,
-				3A180E58294CC40B001FFADC /* ViewController.swift */,
+				3A180E58294CC40B001FFADC /* MainViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -115,6 +122,16 @@
 				3AB09FB0295202BD00161F9B /* UIViewControllerExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3ACE41522955DFFD00A2B11A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3ACE41532955E00E00A2B11A /* Home.storyboard */,
+				3ACE41502955DE5C00A2B11A /* HomeViewController.swift */,
+				3ACE41552955EF9700A2B11A /* HomeRecentViewCell.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A180E6E294CC438001FFADC /* Auth.storyboard in Resources */,
+				3ACE41542955E00E00A2B11A /* Home.storyboard in Resources */,
 				3A180E64294CC40C001FFADC /* LaunchScreen.storyboard in Resources */,
 				3A180E61294CC40C001FFADC /* Assets.xcassets in Resources */,
 				3A180E5C294CC40B001FFADC /* Main.storyboard in Resources */,
@@ -190,10 +208,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AB09FB1295202BD00161F9B /* UIViewControllerExtensions.swift in Sources */,
-				3A180E59294CC40B001FFADC /* ViewController.swift in Sources */,
+				3A180E59294CC40B001FFADC /* MainViewController.swift in Sources */,
 				3A180E55294CC40B001FFADC /* AppDelegate.swift in Sources */,
 				3AB09FAF2951F40B00161F9B /* RegisterViewController.swift in Sources */,
+				3ACE41562955EF9700A2B11A /* HomeRecentViewCell.swift in Sources */,
 				3A180E5F294CC40B001FFADC /* PodcastsApp.xcdatamodeld in Sources */,
+				3ACE41512955DE5C00A2B11A /* HomeViewController.swift in Sources */,
 				3AB09FAD2951EEE000161F9B /* UIColorExtensions.swift in Sources */,
 				3A180E6F294CC438001FFADC /* LoginViewController.swift in Sources */,
 				3A180E57294CC40B001FFADC /* SceneDelegate.swift in Sources */,
@@ -351,6 +371,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -379,6 +400,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

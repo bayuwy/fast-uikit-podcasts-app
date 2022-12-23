@@ -30,3 +30,21 @@ extension UIViewController {
         navigationController?.pushViewController(viewController, animated: true)
     }
 }
+
+// MARK: - MainViewController
+
+extension UIViewController {
+    func showMainViewController() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "main")
+        
+        let window: UIWindow?
+        if #available(iOS 15.0, *) {
+            window = UIApplication.shared.connectedScenes.compactMap { ($0 as? UIWindowScene)?.keyWindow }.first
+        }
+        else {
+            window = UIApplication.shared.windows.filter { $0.isKeyWindow }.first
+        }
+        window?.rootViewController = viewController
+    }
+}

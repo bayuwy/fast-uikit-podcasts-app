@@ -80,7 +80,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func signInButtonTapped(_ sender: Any) {
-        
+        showMainViewController()
     }
     
     @IBAction func signUpButtonTapped(_ sender: Any) {
