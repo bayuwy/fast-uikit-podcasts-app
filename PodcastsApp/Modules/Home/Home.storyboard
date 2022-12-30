@@ -187,7 +187,7 @@
                             <constraint firstItem="wsC-Nx-Ebv" firstAttribute="top" secondItem="fci-aH-GD1" secondAttribute="top" id="rgi-bi-ggH"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="homekit" catalog="system" id="e4I-nv-fcI"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="e4I-nv-fcI"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="wsC-Nx-Ebv" id="eSb-ug-ID1"/>
@@ -200,7 +200,7 @@
     </scenes>
     <resources>
         <image name="ellipsis" catalog="system" width="128" height="37"/>
-        <image name="homekit" catalog="system" width="128" height="104"/>
+        <image name="house" catalog="system" width="128" height="104"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

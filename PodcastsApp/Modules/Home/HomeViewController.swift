@@ -6,26 +6,27 @@
 //
 
 import UIKit
+import Kingfisher
 
 class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var newPodcasts: [Podcast] = [
-        Podcast(trackName: "Track 1", artistName: "Artist 1", artworkUrl: "img_thumb_1"),
-        Podcast(trackName: "Track 2", artistName: "Artist 2", artworkUrl: "img_thumb_1"),
-        Podcast(trackName: "Track 3", artistName: "Artist 2", artworkUrl: "img_thumb_1"),
-        Podcast(trackName: "Track 4", artistName: "Artist 1", artworkUrl: "img_thumb_1"),
-        Podcast(trackName: "Track 5", artistName: "Artist 1", artworkUrl: "img_thumb_1"),
-        Podcast(trackName: "Track 6", artistName: "Artist 3", artworkUrl: "img_thumb_1"),
-        Podcast(trackName: "Track 7", artistName: "Artist 4", artworkUrl: "img_thumb_1"),
+//        Podcast(trackName: "Track 1", artistName: "Artist 1", artworkUrl: "img_thumb_1"),
+//        Podcast(trackName: "Track 2", artistName: "Artist 2", artworkUrl: "img_thumb_1"),
+//        Podcast(trackName: "Track 3", artistName: "Artist 2", artworkUrl: "img_thumb_1"),
+//        Podcast(trackName: "Track 4", artistName: "Artist 1", artworkUrl: "img_thumb_1"),
+//        Podcast(trackName: "Track 5", artistName: "Artist 1", artworkUrl: "img_thumb_1"),
+//        Podcast(trackName: "Track 6", artistName: "Artist 3", artworkUrl: "img_thumb_1"),
+//        Podcast(trackName: "Track 7", artistName: "Artist 4", artworkUrl: "img_thumb_1"),
     ]
     
     var recentPodcasts: [Podcast] = [
-        Podcast(trackName: "Track 1", artistName: "Artist 1", artworkUrl: "img_thumb_1"),
-        Podcast(trackName: "Track 2", artistName: "Artist 2", artworkUrl: "img_thumb_1"),
-        Podcast(trackName: "Track 3", artistName: "Artist 2", artworkUrl: "img_thumb_1"),
-        Podcast(trackName: "Track 4", artistName: "Artist 1", artworkUrl: "img_thumb_1"),
-        Podcast(trackName: "Track 5", artistName: "Artist 1", artworkUrl: "img_thumb_1"),
+//        Podcast(trackName: "Track 1", artistName: "Artist 1", artworkUrl: "img_thumb_1"),
+//        Podcast(trackName: "Track 2", artistName: "Artist 2", artworkUrl: "img_thumb_1"),
+//        Podcast(trackName: "Track 3", artistName: "Artist 2", artworkUrl: "img_thumb_1"),
+//        Podcast(trackName: "Track 4", artistName: "Artist 1", artworkUrl: "img_thumb_1"),
+//        Podcast(trackName: "Track 5", artistName: "Artist 1", artworkUrl: "img_thumb_1"),
     ]
     
     override func viewDidLoad() {
@@ -33,11 +34,21 @@ class HomeViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         setup()
+        loadData()
     }
     
     func setup() {
         tableView.dataSource = self
         tableView.delegate = self
+    }
+    
+    func handleGetNewPodcasts(_ podcasts: [Podcast]) {
+        self.newPodcasts = podcasts
+        self.tableView.reloadData()
+    }
+    
+    func loadData() {
+        APIService.shared.getNewPodcasts(completion: handleGetNewPodcasts)
     }
 }
 
@@ -145,7 +156,29 @@ extension HomeViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "podcast_cell_id", for: indexPath) as! HomePodcastViewCell
         
         let podcast = newPodcasts[indexPath.item]
-        cell.imageView.image = UIImage(named: podcast.artworkUrl)
+        cell.imageView.kf.setImage(with: URL(string: podcast.artworkUrl))
+        
+        /*
+        if let url = URL(string: podcast.artworkUrl) {
+            
+            DispatchQueue.global().async {
+                do {
+                    let data = try Data(contentsOf: url)
+                    let image = UIImage(data: data)
+                    DispatchQueue.main.async {
+                        cell.imageView.image = image
+                    }
+                }
+                catch {
+                    
+                }
+            }
+        }
+        else {
+            cell.imageView.image = nil
+        }
+         */
+        
         cell.titleLabel.text = podcast.trackName
         cell.subtitleLabel.text = podcast.artistName
         
