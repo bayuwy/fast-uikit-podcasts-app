@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import FeedKit
 
 class APIService {
     static let shared: APIService = APIService()
@@ -14,6 +15,26 @@ class APIService {
     
     let SEARCH_URL: String = "https://itunes.apple.com/search"
     
+    func loadEpisodes(url: String, completion: @escaping (_ episodes: [RSSFeedItem]) -> Void) {
+        if let feedUrl = URL(string: url) {
+            let parser = FeedParser(URL: feedUrl)
+            parser.parseAsync { (result) in
+                DispatchQueue.main.async {
+                    switch result {
+                    case .success(let feed):
+                        completion(feed.rssFeed?.items ?? [])
+                        
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                        completion([])
+                    }
+                }
+            }
+        }
+        else {
+            completion([])
+        }
+    }
     
     func searchPodcasts(term: String, completion: @escaping (_ podcasts: [Podcast]) -> Void) {
         let parameters: [String: Any] = [

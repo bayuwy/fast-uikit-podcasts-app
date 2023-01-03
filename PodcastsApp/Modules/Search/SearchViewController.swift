@@ -8,30 +8,41 @@
 import UIKit
 import Kingfisher
 
-class SearchViewController: UIViewController {
+class SearchViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchTextField: UITextField?
     
+    let searchController = UISearchController(searchResultsController: nil)
     var podcasts: [Podcast] = []
+    var searchTimer: Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         setup()
-        
-        searchPodcasts(term: "imre")
     }
     
     func setup() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
         tableView.dataSource = self
         tableView.delegate = self
+        
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = true
+        searchController.searchBar.delegate = self
+        searchTextField?.delegate = self
     }
     
     func searchPodcasts(term: String) {
-        APIService.shared.searchPodcasts(term: term) { (podcasts) in
-            self.podcasts = podcasts
-            self.tableView.reloadData()
-        }
+        searchTimer?.invalidate()
+        searchTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { _ in
+            APIService.shared.searchPodcasts(term: term) { (podcasts) in
+                self.podcasts = podcasts
+                self.tableView.reloadData()
+            }
+        })
     }
 }
 
@@ -59,6 +70,29 @@ extension SearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
+        let podcast = podcasts[indexPath.row]
+        showEpisodesViewController(podcast: podcast)
+    }
+}
+
+// MARK: - UISearchBarDelegate
+extension SearchViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.count >= 3 {
+            searchPodcasts(term: searchText)
+        }
+    }
+}
+
+// MARK: - UISearchBarDelegate
+extension SearchViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
+        let newString = NSString(string: textField.text ?? "").replacingCharacters(in: range, with: string)
+        if newString.count >= 3 {
+            searchPodcasts(term: newString)
+        }
+        
+        return true
     }
 }

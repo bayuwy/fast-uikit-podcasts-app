@@ -1,16 +1,24 @@
 PODS:
+  - FeedKit (9.1.2)
+  - IQKeyboardManagerSwift (6.5.10)
   - Kingfisher (7.4.1)
 
 DEPENDENCIES:
+  - FeedKit (~> 9.0)
+  - IQKeyboardManagerSwift
   - Kingfisher (~> 7.0)
 
 SPEC REPOS:
   trunk:
+    - FeedKit
+    - IQKeyboardManagerSwift
     - Kingfisher
 
 SPEC CHECKSUMS:
+  FeedKit: 71653273ab08e618cd6fd1301ca08fc02dca6a9e
+  IQKeyboardManagerSwift: 52962c76ab33532f15ad9f3ff4e5715eda5335bb
   Kingfisher: cd762a593a61b2fbecf7645c00f9a801a3ebfc9c
 
-PODFILE CHECKSUM: 31a5581785f227e826b15bbf6b0b7bae3f2ef22d
+PODFILE CHECKSUM: e87fe4a5f557c7bbf32770bf6cbb31a02e3cbb87
 
 COCOAPODS: 1.11.3

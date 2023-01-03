@@ -32,6 +32,10 @@ class LoginViewController: UIViewController {
     // MARK: - Helpers
     
     func setup() {
+        self.emailTextField.delegate = self
+        self.passwordTextField.delegate = self
+        self.signInButton.isEnabled = false
+        
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.tintColor = .white
         
@@ -73,6 +77,16 @@ class LoginViewController: UIViewController {
         signInButton.layer.masksToBounds = true
     }
     
+    func isEmailValid(email: String?) -> Bool {
+        let value = email ?? emailTextField.text ?? ""
+        return value.isValidEmail
+    }
+    
+    func isPasswordValid(password: String?) -> Bool {
+        let value = password ?? passwordTextField.text ?? ""
+        return value.count >= 3
+    }
+    
     // MARK: - Actions
     
     @IBAction func eyeButtonTapped(_ sender: Any) {
@@ -85,5 +99,33 @@ class LoginViewController: UIViewController {
     
     @IBAction func signUpButtonTapped(_ sender: Any) {
         showRegisterViewController(customValue: "REGISTER")
+    }
+}
+
+// MARK: - UITextFieldDelegate
+extension LoginViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        var isEmailValid = false
+        var isPasswordValid = false
+        
+        let newString = NSString(string: textField.text ?? "").replacingCharacters(in: range, with: string)
+        if textField == emailTextField {
+            isEmailValid = self.isEmailValid(email: newString)
+            isPasswordValid = self.isPasswordValid(password: nil)
+        }
+        else {
+            isPasswordValid = self.isPasswordValid(password: newString)
+            isEmailValid = self.isEmailValid(email: nil)
+        }
+        
+        signInButton.isEnabled = isEmailValid && isPasswordValid
+        
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return true
     }
 }

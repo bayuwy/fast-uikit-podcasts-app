@@ -7,4 +7,6 @@ target 'PodcastsApp' do
 
   # Pods for PodcastsApp
   pod 'Kingfisher', '~> 7.0'
+  pod 'IQKeyboardManagerSwift'
+  pod 'FeedKit', '~> 9.0'
 end
