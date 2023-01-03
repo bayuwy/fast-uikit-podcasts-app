@@ -21,6 +21,7 @@
 		3A180E64294CC40C001FFADC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A180E62294CC40C001FFADC /* LaunchScreen.storyboard */; };
 		3A180E6E294CC438001FFADC /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A180E6C294CC438001FFADC /* Auth.storyboard */; };
 		3A180E6F294CC438001FFADC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A180E6D294CC438001FFADC /* LoginViewController.swift */; };
+		3A7753F5296415CD0067B3B8 /* SearchPodcastViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7753F4296415CD0067B3B8 /* SearchPodcastViewCell.swift */; };
 		3AB09FAD2951EEE000161F9B /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB09FAC2951EEE000161F9B /* UIColorExtensions.swift */; };
 		3AB09FAF2951F40B00161F9B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB09FAE2951F40B00161F9B /* RegisterViewController.swift */; };
 		3AB09FB1295202BD00161F9B /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB09FB0295202BD00161F9B /* UIViewControllerExtensions.swift */; };
@@ -50,6 +51,7 @@
 		3A180E65294CC40C001FFADC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A180E6C294CC438001FFADC /* Auth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		3A180E6D294CC438001FFADC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3A7753F4296415CD0067B3B8 /* SearchPodcastViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPodcastViewCell.swift; sourceTree = "<group>"; };
 		3AB09FAC2951EEE000161F9B /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		3AB09FAE2951F40B00161F9B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		3AB09FB0295202BD00161F9B /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			children = (
 				3A0A425D295F30EB00811709 /* Search.storyboard */,
 				3A0A425F295F310500811709 /* SearchViewController.swift */,
+				3A7753F4296415CD0067B3B8 /* SearchPodcastViewCell.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				3A180E59294CC40B001FFADC /* MainViewController.swift in Sources */,
 				3A180E55294CC40B001FFADC /* AppDelegate.swift in Sources */,
 				3ADCFB87295B3A20000B6446 /* HomeNewPodcastsViewCell.swift in Sources */,
+				3A7753F5296415CD0067B3B8 /* SearchPodcastViewCell.swift in Sources */,
 				3AB09FAF2951F40B00161F9B /* RegisterViewController.swift in Sources */,
 				3ACE41562955EF9700A2B11A /* HomeRecentViewCell.swift in Sources */,
 				3ADCFB89295B3B87000B6446 /* HomePodcastViewCell.swift in Sources */,

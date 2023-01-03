@@ -16,11 +16,84 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="QSU-on-Otl">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="podcast_cell_id" rowHeight="138" id="BqN-Kp-VZo" customClass="SearchPodcastViewCell" customModule="PodcastsApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="138"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BqN-Kp-VZo" id="4ps-sJ-ndn">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="138"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E3g-Ds-PVC">
+                                                    <rect key="frame" x="20" y="20" width="100" height="100"/>
+                                                    <color key="backgroundColor" systemColor="systemFillColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="jqe-dM-98x"/>
+                                                        <constraint firstAttribute="height" constant="100" id="lxO-4j-z9c"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="iDa-wQ-f2o">
+                                                    <rect key="frame" x="140" y="20" width="233" height="62"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWn-em-Dq1">
+                                                            <rect key="frame" x="0.0" y="0.0" width="233" height="20.333333333333332"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PyG-nW-yTu">
+                                                            <rect key="frame" x="0.0" y="24.333333333333336" width="233" height="18"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kod-ee-KeE">
+                                                            <rect key="frame" x="0.0" y="46.333333333333329" width="233" height="15.666666666666664"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                            <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="iDa-wQ-f2o" firstAttribute="leading" secondItem="E3g-Ds-PVC" secondAttribute="trailing" constant="20" id="FhQ-s8-NGT"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="iDa-wQ-f2o" secondAttribute="bottom" constant="20" id="Hgp-Bi-jQd"/>
+                                                <constraint firstItem="E3g-Ds-PVC" firstAttribute="leading" secondItem="4ps-sJ-ndn" secondAttribute="leading" constant="20" id="bV9-QS-bhm"/>
+                                                <constraint firstItem="iDa-wQ-f2o" firstAttribute="top" secondItem="E3g-Ds-PVC" secondAttribute="top" id="bfN-PK-eOE"/>
+                                                <constraint firstAttribute="trailing" secondItem="iDa-wQ-f2o" secondAttribute="trailing" constant="20" id="d2f-cV-F1U"/>
+                                                <constraint firstItem="E3g-Ds-PVC" firstAttribute="top" secondItem="4ps-sJ-ndn" secondAttribute="top" constant="20" id="yPZ-2d-HPc"/>
+                                                <constraint firstAttribute="bottom" secondItem="E3g-Ds-PVC" secondAttribute="bottom" priority="250" constant="20" id="yQc-sx-usH"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="artistLabel" destination="PyG-nW-yTu" id="2wK-UV-HhY"/>
+                                            <outlet property="episodeLabel" destination="Kod-ee-KeE" id="7nk-Xo-O0Y"/>
+                                            <outlet property="nameLabel" destination="eWn-em-Dq1" id="WDq-xZ-vpd"/>
+                                            <outlet property="thumbImageView" destination="E3g-Ds-PVC" id="saI-G2-6zU"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="QSU-on-Otl" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="33J-jQ-ght"/>
+                            <constraint firstAttribute="bottom" secondItem="QSU-on-Otl" secondAttribute="bottom" id="Jxa-M2-fhJ"/>
+                            <constraint firstItem="QSU-on-Otl" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="fes-HS-8Zp"/>
+                            <constraint firstItem="QSU-on-Otl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="iEO-bK-Dlf"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="SkY-YS-LSn"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="QSU-on-Otl" id="3xU-m3-CVW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -48,8 +121,14 @@
     </scenes>
     <resources>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemFillColor">
+            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
