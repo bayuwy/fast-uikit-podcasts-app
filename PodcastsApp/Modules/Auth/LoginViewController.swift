@@ -21,6 +21,9 @@ class LoginViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         setup()
+        
+        //FIXME: - remove latter
+        showMainViewController()
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -27,6 +27,11 @@
 		3A7753FC29646F240067B3B8 /* EpisodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7753FB29646F240067B3B8 /* EpisodesViewController.swift */; };
 		3A7753FE29646FD80067B3B8 /* EpisodeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7753FD29646FD80067B3B8 /* EpisodeViewCell.swift */; };
 		3A7754002964774C0067B3B8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7753FF2964774C0067B3B8 /* BaseViewController.swift */; };
+		3AA4ED822968501100A854B3 /* Player.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AA4ED812968501100A854B3 /* Player.storyboard */; };
+		3AA4ED842968502400A854B3 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA4ED832968502400A854B3 /* PlayerViewController.swift */; };
+		3AA4ED8629685B2800A854B3 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA4ED8529685B2800A854B3 /* Episode.swift */; };
+		3AA4ED8729685BDB00A854B3 /* PlayerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA4ED7E296843C400A854B3 /* PlayerProvider.swift */; };
+		3AA4ED8929685FDB00A854B3 /* DoubleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA4ED8829685FDB00A854B3 /* DoubleExtensions.swift */; };
 		3AB09FAD2951EEE000161F9B /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB09FAC2951EEE000161F9B /* UIColorExtensions.swift */; };
 		3AB09FAF2951F40B00161F9B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB09FAE2951F40B00161F9B /* RegisterViewController.swift */; };
 		3AB09FB1295202BD00161F9B /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB09FB0295202BD00161F9B /* UIViewControllerExtensions.swift */; };
@@ -63,6 +68,10 @@
 		3A7753FD29646FD80067B3B8 /* EpisodeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeViewCell.swift; sourceTree = "<group>"; };
 		3A7753FF2964774C0067B3B8 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		3AA4ED7E296843C400A854B3 /* PlayerProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerProvider.swift; sourceTree = "<group>"; };
+		3AA4ED812968501100A854B3 /* Player.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Player.storyboard; sourceTree = "<group>"; };
+		3AA4ED832968502400A854B3 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		3AA4ED8529685B2800A854B3 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
+		3AA4ED8829685FDB00A854B3 /* DoubleExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtensions.swift; sourceTree = "<group>"; };
 		3AB09FAC2951EEE000161F9B /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		3AB09FAE2951F40B00161F9B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		3AB09FB0295202BD00161F9B /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
@@ -174,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				3A7753FF2964774C0067B3B8 /* BaseViewController.swift */,
+				3AA4ED802968500100A854B3 /* Player */,
 				3A7753F829646EF20067B3B8 /* Episode */,
 				3ACE41522955DFFD00A2B11A /* Home */,
 				3A0A425C295F30D200811709 /* Search */,
@@ -202,12 +212,22 @@
 			path = Episode;
 			sourceTree = "<group>";
 		};
+		3AA4ED802968500100A854B3 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				3AA4ED812968501100A854B3 /* Player.storyboard */,
+				3AA4ED832968502400A854B3 /* PlayerViewController.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
 		3AB09FAB2951EEB600161F9B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				3AB09FAC2951EEE000161F9B /* UIColorExtensions.swift */,
 				3AB09FB0295202BD00161F9B /* UIViewControllerExtensions.swift */,
 				3A7753F6296466BA0067B3B8 /* StringExtensions.swift */,
+				3AA4ED8829685FDB00A854B3 /* DoubleExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -228,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				3ADCFB84295B3468000B6446 /* Podcast.swift */,
+				3AA4ED8529685B2800A854B3 /* Episode.swift */,
 				3A0A4254295F1BF000811709 /* SearchResponse.swift */,
 			);
 			path = Models;
@@ -304,6 +325,7 @@
 				3ACE41542955E00E00A2B11A /* Home.storyboard in Resources */,
 				3A180E64294CC40C001FFADC /* LaunchScreen.storyboard in Resources */,
 				3A180E61294CC40C001FFADC /* Assets.xcassets in Resources */,
+				3AA4ED822968501100A854B3 /* Player.storyboard in Resources */,
 				3A0A425E295F30EB00811709 /* Search.storyboard in Resources */,
 				3A180E5C294CC40B001FFADC /* Main.storyboard in Resources */,
 			);
@@ -367,10 +389,13 @@
 				3ADCFB87295B3A20000B6446 /* HomeNewPodcastsViewCell.swift in Sources */,
 				3A7753F5296415CD0067B3B8 /* SearchPodcastViewCell.swift in Sources */,
 				3AB09FAF2951F40B00161F9B /* RegisterViewController.swift in Sources */,
+				3AA4ED842968502400A854B3 /* PlayerViewController.swift in Sources */,
 				3ACE41562955EF9700A2B11A /* HomeRecentViewCell.swift in Sources */,
 				3A7753FC29646F240067B3B8 /* EpisodesViewController.swift in Sources */,
+				3AA4ED8929685FDB00A854B3 /* DoubleExtensions.swift in Sources */,
 				3ADCFB89295B3B87000B6446 /* HomePodcastViewCell.swift in Sources */,
 				3A180E5F294CC40B001FFADC /* PodcastsApp.xcdatamodeld in Sources */,
+				3AA4ED8629685B2800A854B3 /* Episode.swift in Sources */,
 				3A7753FE29646FD80067B3B8 /* EpisodeViewCell.swift in Sources */,
 				3A0A4260295F310500811709 /* SearchViewController.swift in Sources */,
 				3A7753F7296466BA0067B3B8 /* StringExtensions.swift in Sources */,
@@ -379,6 +404,7 @@
 				3AB09FAD2951EEE000161F9B /* UIColorExtensions.swift in Sources */,
 				3A180E6F294CC438001FFADC /* LoginViewController.swift in Sources */,
 				3A180E57294CC40B001FFADC /* SceneDelegate.swift in Sources */,
+				3AA4ED8729685BDB00A854B3 /* PlayerProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,6 +560,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -564,6 +591,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

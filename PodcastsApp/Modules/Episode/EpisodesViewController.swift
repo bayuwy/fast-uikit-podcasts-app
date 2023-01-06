@@ -34,6 +34,7 @@ class EpisodesViewController: BaseViewController {
         searchController.searchBar.delegate = self
         
         tableView.dataSource = self
+        tableView.delegate = self
     }
     
     func loadEpisodes() {
@@ -75,6 +76,15 @@ extension EpisodesViewController: UITableViewDataSource {
     }
 }
 
+// MARK: - UITableViewDelegate
+extension EpisodesViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let episode = episodes[indexPath.row]
+        presentPlayerViewController(episode: episode)
+    }
+}
 
 // MARK: - UISearchBarDelegate
 extension EpisodesViewController: UISearchBarDelegate {
