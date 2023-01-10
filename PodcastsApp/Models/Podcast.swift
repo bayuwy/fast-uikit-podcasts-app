@@ -41,4 +41,15 @@ struct Podcast: Decodable {
         genres = try container.decodeIfPresent([String].self, forKey: .genres) ?? []
         feedUrl = try container.decodeIfPresent(String.self, forKey: .feedUrl) ?? ""
     }
+    
+    init(data: DPodcast) {
+        track_id = Int(data.trackId)
+        trackName = data.trackName ?? ""
+        artistName = data.artistName ?? ""
+        artworkUrl = data.artworkUrl ?? ""
+        trackCount = Int(data.trackCount)
+        genres = []
+        collectionId = ""
+        feedUrl = data.feedUrl ?? ""
+    }
 }

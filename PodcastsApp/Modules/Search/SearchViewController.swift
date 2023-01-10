@@ -21,6 +21,19 @@ class SearchViewController: BaseViewController {
         
         // Do any additional setup after loading the view.
         setup()
+        getCoreDataDBPath()
+    }
+    
+    func getCoreDataDBPath() {
+        let path = FileManager
+            .default
+            .urls(for: .applicationSupportDirectory, in: .userDomainMask)
+            .last?
+            .absoluteString
+            .replacingOccurrences(of: "file://", with: "")
+            .removingPercentEncoding
+
+         print("Core Data DB Path :: \(path ?? "Not found")")
     }
     
     func setup() {
@@ -40,6 +53,14 @@ class SearchViewController: BaseViewController {
         searchTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { _ in
             APIService.shared.searchPodcasts(term: term) { (podcasts) in
                 self.podcasts = podcasts
+                
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                let context = appDelegate.viewContext
+                
+                podcasts.forEach { podcast in
+                    DPodcast.save(podcast, context: context)
+                }
+                
                 self.tableView.reloadData()
             }
         })

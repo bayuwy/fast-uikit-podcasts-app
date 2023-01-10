@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlayerView" customModule="PodcastsApp" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="5G7-Zj-FJm" id="nBJ-Sa-dp5"/>
+                <outlet property="forwardButton" destination="8CW-AX-CeE" id="IsU-3o-kmU"/>
+                <outlet property="imageView" destination="nAv-Xw-xof" id="IRP-g0-ilX"/>
+                <outlet property="playButton" destination="HtB-43-uBQ" id="0gI-eB-ndA"/>
+                <outlet property="rewindButton" destination="SMS-uH-Vj7" id="3CP-aj-N2e"/>
+                <outlet property="titleLabel" destination="Ax6-vJ-Tyh" id="sJr-lZ-c5c"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="5G7-Zj-FJm">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="58"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nAv-Xw-xof">
+                    <rect key="frame" x="8" y="8" width="42" height="42"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="nAv-Xw-xof" secondAttribute="height" multiplier="1:1" id="NUX-EW-yft"/>
+                        <constraint firstAttribute="height" constant="42" id="uH9-Xg-REl"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ax6-vJ-Tyh">
+                    <rect key="frame" x="58" y="8" width="193" height="42"/>
+                    <string key="text">Episode
+Title</string>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="jBg-ww-AnB">
+                    <rect key="frame" x="259" y="14" width="108" height="30"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMS-uH-Vj7">
+                            <rect key="frame" x="0.0" y="0.0" width="32" height="30"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="backward.fill" catalog="system"/>
+                            <connections>
+                                <action selector="rewindButtonTapped:" destination="-1" eventType="touchUpInside" id="hDd-mI-dAE"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HtB-43-uBQ">
+                            <rect key="frame" x="36" y="0.0" width="36" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="36" id="efd-Xn-Jg0"/>
+                                <constraint firstAttribute="height" constant="30" id="oR3-Kg-Qry"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="play.fill" catalog="system"/>
+                            <connections>
+                                <action selector="playButtonTapped:" destination="-1" eventType="touchUpInside" id="rzU-5N-Cj0"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8CW-AX-CeE">
+                            <rect key="frame" x="76" y="0.0" width="32" height="30"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="forward.fill" catalog="system"/>
+                            <connections>
+                                <action selector="forwardButtonTapped:" destination="-1" eventType="touchUpInside" id="mhI-ek-csG"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="uGh-mh-ZTg"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstItem="jBg-ww-AnB" firstAttribute="leading" secondItem="Ax6-vJ-Tyh" secondAttribute="trailing" constant="8" id="BD9-dw-GqK"/>
+                <constraint firstAttribute="trailing" secondItem="jBg-ww-AnB" secondAttribute="trailing" constant="8" id="Fhq-ML-cFu"/>
+                <constraint firstItem="nAv-Xw-xof" firstAttribute="leading" secondItem="uGh-mh-ZTg" secondAttribute="leading" constant="8" id="GW4-xD-2mL"/>
+                <constraint firstItem="Ax6-vJ-Tyh" firstAttribute="bottom" secondItem="nAv-Xw-xof" secondAttribute="bottom" id="NwJ-DQ-ZGQ"/>
+                <constraint firstItem="uGh-mh-ZTg" firstAttribute="bottom" secondItem="nAv-Xw-xof" secondAttribute="bottom" constant="8" id="RAW-Hv-0c0"/>
+                <constraint firstItem="jBg-ww-AnB" firstAttribute="centerY" secondItem="5G7-Zj-FJm" secondAttribute="centerY" id="TQz-2j-CUj"/>
+                <constraint firstItem="nAv-Xw-xof" firstAttribute="top" secondItem="5G7-Zj-FJm" secondAttribute="top" constant="8" id="d81-RV-on4"/>
+                <constraint firstItem="Ax6-vJ-Tyh" firstAttribute="leading" secondItem="nAv-Xw-xof" secondAttribute="trailing" constant="8" id="ozz-VJ-P5m"/>
+                <constraint firstItem="Ax6-vJ-Tyh" firstAttribute="top" secondItem="nAv-Xw-xof" secondAttribute="top" id="rmp-Kt-1Of"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="YCb-eN-1XY" appends="YES" id="9OX-9k-38G"/>
+            </connections>
+            <point key="canvasLocation" x="-441.98473282442745" y="1.7605633802816902"/>
+        </view>
+        <tapGestureRecognizer id="YCb-eN-1XY">
+            <connections>
+                <action selector="viewTapped:" destination="-1" id="z16-Du-GwB"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="backward.fill" catalog="system" width="128" height="77"/>
+        <image name="forward.fill" catalog="system" width="128" height="77"/>
+        <image name="play.fill" catalog="system" width="117" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -11,23 +11,8 @@ import Kingfisher
 class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
-    var newPodcasts: [Podcast] = [
-//        Podcast(trackName: "Track 1", artistName: "Artist 1", artworkUrl: "img_thumb_1"),
-//        Podcast(trackName: "Track 2", artistName: "Artist 2", artworkUrl: "img_thumb_1"),
-//        Podcast(trackName: "Track 3", artistName: "Artist 2", artworkUrl: "img_thumb_1"),
-//        Podcast(trackName: "Track 4", artistName: "Artist 1", artworkUrl: "img_thumb_1"),
-//        Podcast(trackName: "Track 5", artistName: "Artist 1", artworkUrl: "img_thumb_1"),
-//        Podcast(trackName: "Track 6", artistName: "Artist 3", artworkUrl: "img_thumb_1"),
-//        Podcast(trackName: "Track 7", artistName: "Artist 4", artworkUrl: "img_thumb_1"),
-    ]
-    
-    var recentPodcasts: [Podcast] = [
-//        Podcast(trackName: "Track 1", artistName: "Artist 1", artworkUrl: "img_thumb_1"),
-//        Podcast(trackName: "Track 2", artistName: "Artist 2", artworkUrl: "img_thumb_1"),
-//        Podcast(trackName: "Track 3", artistName: "Artist 2", artworkUrl: "img_thumb_1"),
-//        Podcast(trackName: "Track 4", artistName: "Artist 1", artworkUrl: "img_thumb_1"),
-//        Podcast(trackName: "Track 5", artistName: "Artist 1", artworkUrl: "img_thumb_1"),
-    ]
+    var newPodcasts: [Podcast] = []
+    var recentPodcasts: [Podcast] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +20,7 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
         setup()
         loadData()
+        loadRecentPodcasts()
     }
     
     func setup() {
@@ -49,6 +35,13 @@ class HomeViewController: UIViewController {
     
     func loadData() {
         APIService.shared.getNewPodcasts(completion: handleGetNewPodcasts)
+    }
+    
+    func loadRecentPodcasts() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.viewContext
+        
+        recentPodcasts = DPodcast.fetch(context: context)
     }
 }
 
@@ -86,7 +79,7 @@ extension HomeViewController: UITableViewDataSource {
             let podcast: Podcast = recentPodcasts[indexPath.row]
             
             cell.numberLabel.text = String(format: "%02d", indexPath.row + 1)
-            cell.thumbImageView.image = UIImage(named: podcast.artworkUrl)
+            cell.thumbImageView.kf.setImage(with: URL(string: podcast.artworkUrl))
             cell.titleLabel.text = podcast.trackName
             cell.subtitleLabel.text = podcast.artistName
             

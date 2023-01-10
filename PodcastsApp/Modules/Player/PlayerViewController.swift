@@ -159,7 +159,7 @@ class PlayerViewController: UIViewController {
 }
 
 extension UIViewController {
-    func presentPlayerViewController(episode: RSSFeedItem) {
+    func presentPlayerViewController(episode: Episode) {
         let storyboard = UIStoryboard(name: "Player", bundle: nil)
         
         let viewController = storyboard.instantiateViewController(withIdentifier: "player") as! PlayerViewController
