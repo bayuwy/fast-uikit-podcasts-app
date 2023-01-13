@@ -50,7 +50,7 @@ class MainViewController: UITabBarController {
         NSLayoutConstraint.activate([
             playerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             playerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            playerView.bottomAnchor.constraint(equalTo: tabBar.bottomAnchor)
+            playerView.bottomAnchor.constraint(equalTo: tabBar.topAnchor)
         ])
         
         view.bringSubviewToFront(playerView)

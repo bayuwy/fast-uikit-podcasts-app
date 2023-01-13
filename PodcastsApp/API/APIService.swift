@@ -15,6 +15,32 @@ class APIService {
     
     let SEARCH_URL: String = "https://itunes.apple.com/search"
     
+    func download(episode: Episode) {
+        UserDefaults.standard.save(episode: episode)
+        let request = DownloadRequest.suggestedDownloadDestination()
+        AF.download(episode.streamUrl, to: request)
+            .downloadProgress { (progress) in
+                NotificationCenter.default.post(
+                    name: .downloadProgress,
+                    object: nil,
+                    userInfo: [
+                        "streamUrl": episode.streamUrl,
+                        "progress": progress.fractionCompleted
+                    ]
+                )
+            }
+            .response { (respose) in
+                var episodes = UserDefaults.standard.downloadedEpisodes()
+                if let index = episodes.firstIndex(where: { $0.streamUrl == episode.streamUrl }) {
+                    episodes[index].fileUrl = respose.fileURL?.absoluteString
+                    
+                    UserDefaults.standard.sava(episodes: episodes)
+                    
+                    NotificationCenter.default.post(name: .downloadComplete, object: nil)
+                }
+            }
+    }
+    
     func loadEpisodes(url: String, completion: @escaping (_ episodes: [RSSFeedItem]) -> Void) {
         if let feedUrl = URL(string: url) {
             let parser = FeedParser(URL: feedUrl)

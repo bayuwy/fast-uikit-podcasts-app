@@ -53,14 +53,6 @@ class SearchViewController: BaseViewController {
         searchTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { _ in
             APIService.shared.searchPodcasts(term: term) { (podcasts) in
                 self.podcasts = podcasts
-                
-                let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                let context = appDelegate.viewContext
-                
-                podcasts.forEach { podcast in
-                    DPodcast.save(podcast, context: context)
-                }
-                
                 self.tableView.reloadData()
             }
         })
@@ -93,6 +85,43 @@ extension SearchViewController: UITableViewDelegate {
         
         let podcast = podcasts[indexPath.row]
         showEpisodesViewController(podcast: podcast)
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let podcast = podcasts[indexPath.row]
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.viewContext
+        
+        let favorited = DPodcast.fetch(trackId: podcast.track_id, context: context)
+        let action: UIContextualAction
+        
+        if favorited == nil {
+            action = UIContextualAction(style: .normal, title: "Favorite", handler: { (_, _, completion) in
+                DPodcast.save(podcast, context: context)
+                completion(true)
+            })
+            
+            action.backgroundColor = UIColor.systemYellow
+            action.image = UIImage(systemName: "star.fill")
+        }
+        else {
+            action = UIContextualAction(style: .normal, title: "Unfavorite", handler: { (_, _, completion) in
+                DPodcast.delete(trackId: podcast.track_id, context: context)
+                completion(true)
+            })
+            
+            action.backgroundColor = UIColor.systemRed
+            action.image = UIImage(systemName: "star.slash.fill")
+        }
+        
+        
+        
+        let config = UISwipeActionsConfiguration(actions: [
+            action
+        ])
+        
+        return config
     }
 }
 

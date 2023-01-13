@@ -55,6 +55,10 @@ class EpisodesViewController: BaseViewController {
             episodes = fullEpisodes
         }
     }
+    
+    func download(eposide: Episode) {
+        APIService.shared.download(episode: eposide)
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -83,6 +87,19 @@ extension EpisodesViewController: UITableViewDelegate {
         
         let episode = episodes[indexPath.row]
         presentPlayerViewController(episode: episode)
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let download = UIContextualAction(style: .normal, title: "Download") { (_, _, completion) in
+            self.download(eposide: self.episodes[indexPath.row])
+            completion(true)
+        }
+        download.image = UIImage(systemName: "square.and.arrow.down.fill")
+        download.backgroundColor = UIColor.systemGreen
+        
+        let actions = UISwipeActionsConfiguration(actions: [download])
+        return actions
     }
 }
 

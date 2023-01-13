@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class HomeViewController: UIViewController {
+class HomeViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var newPodcasts: [Podcast] = []
@@ -176,6 +176,14 @@ extension HomeViewController: UICollectionViewDataSource {
         cell.subtitleLabel.text = podcast.artistName
         
         return cell
+    }
+}
+
+// MARK: - UICollectionViewDelegate
+extension HomeViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let podcast = newPodcasts[indexPath.item]
+        showEpisodesViewController(podcast: podcast)
     }
 }
 

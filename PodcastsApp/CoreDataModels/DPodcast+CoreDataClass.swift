@@ -32,6 +32,8 @@ public class DPodcast: NSManagedObject {
         entity.trackCount = Int16(podcast.trackCount)
         entity.feedUrl = podcast.feedUrl
         
+        NotificationCenter.default.post(name: .favorites, object: nil)
+        
         try? context.save()
     }
     
@@ -46,5 +48,27 @@ public class DPodcast: NSManagedObject {
         let podcasts = dPodcasts.compactMap { Podcast(data: $0) }
         
         return podcasts
+    }
+    
+    class func fetch(trackId: Int, context: NSManagedObjectContext) -> Podcast? {
+        let request: NSFetchRequest<DPodcast> = DPodcast.fetchRequest()
+        request.predicate = NSPredicate(format: "trackId = \(trackId)")
+        if let dPodcast = try? context.fetch(request).first {
+            let podcast = Podcast(data: dPodcast)
+            return podcast
+        }
+        else {
+            return nil
+        }
+    }
+    
+    class func delete(trackId: Int, context: NSManagedObjectContext) {
+        let request: NSFetchRequest<DPodcast> = DPodcast.fetchRequest()
+        request.predicate = NSPredicate(format: "trackId = \(trackId)")
+        if let dPodcast = try? context.fetch(request).first {
+            context.delete(dPodcast)
+            
+            NotificationCenter.default.post(name: .favorites, object: nil)
+        }
     }
 }
