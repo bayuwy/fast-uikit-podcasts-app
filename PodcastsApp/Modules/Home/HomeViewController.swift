@@ -71,6 +71,17 @@ extension HomeViewController: UITableViewDataSource {
             cell.collectionView.delegate = self
             cell.collectionView.reloadData()
             
+            let screenWidth = UIScreen.main.bounds.width
+            let colounm: CGFloat = 3
+            let totalMargin: CGFloat = 16 * 2
+            let totalSpacing: CGFloat = 12 * (colounm - 1)
+            let line: CGFloat  = 2
+            let width = floor((screenWidth - totalMargin - totalSpacing) / colounm)
+            let height = (line * (width + 0)) + ((line - 1) * 12) + (2 * 16)
+            
+            cell.heightConstraint.constant = CGFloat(height)
+            cell.layoutIfNeeded()
+            
             return cell
             
         default:
@@ -191,21 +202,28 @@ extension HomeViewController: UICollectionViewDelegate {
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         
-        return UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        return UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         
-        return 20
+        return 12
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         
-        return 20
+        return 12
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: 200, height: 200)
+        let screenWidth = UIScreen.main.bounds.width
+        let colounm: CGFloat = 3
+        let totalMargin: CGFloat = 16 * 2
+        let totalSpacing: CGFloat = 12 * (colounm - 1)
+        let width = floor((screenWidth - totalMargin - totalSpacing) / colounm)
+        let height = (width + 0)
+        
+        return CGSize(width: width, height: height)
     }
 }

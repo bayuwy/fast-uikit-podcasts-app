@@ -9,4 +9,5 @@ import UIKit
 
 class HomeNewPodcastsViewCell: UITableViewCell {
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
 }

@@ -92,7 +92,7 @@
                                                 <rect key="frame" x="108.33333333333334" y="0.0" width="96.333333333333343" height="60"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uj5-MT-4AF">
-                                                        <rect key="frame" x="18.333333333333314" y="2.3333333333333339" width="60" height="55.333333333333314"/>
+                                                        <rect key="frame" x="18.333333333333314" y="2" width="60" height="56"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="60" id="TsG-fn-AnC"/>
                                                             <constraint firstAttribute="height" constant="60" id="ej4-J7-89x"/>

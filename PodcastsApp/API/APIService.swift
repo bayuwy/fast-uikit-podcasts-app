@@ -85,7 +85,7 @@ class APIService {
         let parameters: [String: Any] = [
             "media": "podcast",
             "term": "swift",
-            "limit": 7
+            "limit": 8
         ]
         
         AF.request(SEARCH_URL, method: .get, parameters: parameters, encoding: URLEncoding.default)

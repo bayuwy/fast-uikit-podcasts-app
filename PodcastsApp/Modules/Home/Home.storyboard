@@ -98,6 +98,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="collectionView" destination="YhV-Jk-YKW" id="PUu-OE-yXv"/>
+                                            <outlet property="heightConstraint" destination="KEq-cY-EKF" id="r8k-Bm-N3P"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="recent_cell_id" rowHeight="56" id="xPR-vD-124" customClass="HomeRecentViewCell" customModule="PodcastsApp" customModuleProvider="target">
